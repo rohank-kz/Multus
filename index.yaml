@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  multus-quickstart:
+  - apiVersion: v2
+    appVersion: snapshot-thick
+    created: "2026-02-24T12:40:22.428404+05:30"
+    description: Quickstart Multus CNI (from upstream quickstart manifest)
+    digest: 52a8576c157d4328f1db1f50c79d2487122b825ddba8488ffc0df9d1e96b954e
+    name: multus-quickstart
+    type: application
+    urls:
+    - https://github.com/rohank-kz/Multus.git/multus-quickstart-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-02-24T12:40:22.4279+05:30"
