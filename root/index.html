@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multus Helm Repository</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #93c5fd;
+    }
+    code {
+      background: #020617;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+    pre {
+      background: #020617;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .card {
+      border-radius: 12px;
+      padding: 1.5rem;
+      background: radial-gradient(circle at top left, #1d4ed8, #020617);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(148, 163, 184, 0.2);
+      color: #e5e7eb;
+      margin-right: 0.25rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="badge">Helm Repo</div>
+      <div class="badge">Multus CNI</div>
+      <h1>Multus Helm Repository</h1>
+      <p>
+        This GitHub Pages site hosts the <strong>multus-quickstart</strong> Helm chart.
+        You can add it as a Helm repository and install it into your Kubernetes cluster.
+      </p>
+
+      <h2>Repository URL</h2>
+      <p>
+        Helm repository URL:
+        <code>https://rohank-kz.github.io/Multus</code>
+      </p>
+
+      <h2>Usage</h2>
+      <p>From your terminal:</p>
+      <pre><code>helm repo add multus https://rohank-kz.github.io/Multus
+helm repo update
+helm install multus multus/multus-quickstart -n kube-system --create-namespace</code></pre>
+
+      <h2>About the Chart</h2>
+      <ul>
+        <li>Installs Multus CNI using the upstream quickstart-style DaemonSet.</li>
+        <li>Includes the NetworkAttachmentDefinition CRD and required RBAC.</li>
+        <li>Defaults are tuned for quick testing; review before production use.</li>
+      </ul>
+
+      <p>
+        Chart source and issues:
+        <a href="https://github.com/rohank-kz/Multus" target="_blank" rel="noopener noreferrer">
+          github.com/rohank-kz/Multus
+        </a>
+      </p>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> Multus Helm Repository
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
