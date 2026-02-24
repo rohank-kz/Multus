@@ -9,6 +9,7 @@ entries:
     name: multus-quickstart
     type: application
     urls:
-    - https://github.com/rohank-kz/Multus.git/multus-quickstart-0.1.0.tgz
+    - https://raw.githubusercontent.com/rohank-kz/Multus/main/multus-quickstart-0.1.0.tgz
     version: 0.1.0
 generated: "2026-02-24T12:40:22.4279+05:30"
+
