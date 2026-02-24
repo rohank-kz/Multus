@@ -1,0 +1,57 @@
+image:
+  repository: ghcr.io/k8snetworkplumbingwg/multus-cni
+  tag: snapshot-thick
+  pullPolicy: IfNotPresent
+
+logLevel: verbose
+
+rbac:
+  create: true
+
+serviceAccount:
+  create: true
+  name: multus
+
+configMap:
+  name: multus-daemon-config
+
+daemonSet:
+  name: kube-multus-ds
+
+resources:
+  daemon:
+    requests:
+      cpu: "100m"
+      memory: "50Mi"
+    limits:
+      cpu: "100m"
+      memory: "50Mi"
+  init:
+    requests:
+      cpu: "10m"
+      memory: "15Mi"
+
+tolerations:
+  - operator: Exists
+    effect: NoSchedule
+  - operator: Exists
+    effect: NoExecute
+
+hostPaths:
+  cniConfigDir: /etc/cni/net.d
+  cniBinDir: /opt/cni/bin
+  runDir: /run
+  varLibCniMultus: /var/lib/cni/multus
+  varLibKubelet: /var/lib/kubelet
+  runK8sCniCncfIo: /run/k8s.cni.cncf.io
+  runNetns: /run/netns/
+  multusConfDir: /etc/cni/multus/net.d
+
+daemonConfig:
+  chrootDir: /hostroot
+  cniVersion: "0.3.1"
+  logToStderr: true
+  cniConfigDir: /host/etc/cni/net.d
+  multusAutoconfigDir: /host/etc/cni/net.d
+  multusConfigFile: auto
+  socketDir: /host/run/multus/

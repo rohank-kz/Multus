@@ -1,0 +1,6 @@
+apiVersion: v2
+name: multus-quickstart
+description: Quickstart Multus CNI (from upstream quickstart manifest)
+type: application
+version: 0.1.0
+appVersion: "snapshot-thick"

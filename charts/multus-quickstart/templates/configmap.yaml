@@ -1,0 +1,20 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ .Values.configMap.name | quote }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    tier: node
+    app: multus
+data:
+  daemon-config.json: |
+    {
+        "chrootDir": {{ .Values.daemonConfig.chrootDir | quote }},
+        "cniVersion": {{ .Values.daemonConfig.cniVersion | quote }},
+        "logLevel": {{ .Values.logLevel | quote }},
+        "logToStderr": {{ .Values.daemonConfig.logToStderr }},
+        "cniConfigDir": {{ .Values.daemonConfig.cniConfigDir | quote }},
+        "multusAutoconfigDir": {{ .Values.daemonConfig.multusAutoconfigDir | quote }},
+        "multusConfigFile": {{ .Values.daemonConfig.multusConfigFile | quote }},
+        "socketDir": {{ .Values.daemonConfig.socketDir | quote }}
+    }
